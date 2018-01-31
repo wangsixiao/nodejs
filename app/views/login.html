@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Music</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript"> 
+		addEventListener("load", function(){ setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link href="/style/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+ <!--SIGN UP-->
+ <h1>Music sharing</h1>
+<div class="login-form">
+	<div class="head-info">
+		<h2>Welcome</h2>
+		<h3>Music</h3>
+	</div>
+	<form action="/login" method="post">
+		<input type="text" name="username" class="username" value="username" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;username&#39;;}">
+		<input type="password" name="password" class="password" value="password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}">
+		<input type="submit" value="Login" id="login">
+	</form>
+	<div class="password">
+		<a href="./register">Password   |   Register</a>
+	</div>
+	<div class="error"><%= errMsg %></div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	// $(function(){
+	// 	$("#login").click(function(){
+	// 		var loginData = {}
+	// 		loginData.username = $(".username").val()
+	// 		loginData.password = $(".password").val()
+	// 		$.ajax({
+	// 			headers: {
+	// 			    Accept: "application/json; charset=utf-8"
+	// 			},
+	// 			data: loginData,
+	// 			url: '/index',
+	// 			type: 'POST',
+	// 			dataType: 'json',
+	// 		})
+	// 	})
+	// })
+</script>
+</html>

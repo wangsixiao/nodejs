@@ -1,0 +1,316 @@
+body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
+/* Reset */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.demo{padding-top: 10px;}
+.container .col-md-3 ,.container .col-sm-6 ,.container .col-xs-6{
+	padding-right: 3px;
+	padding-left: 3px;
+}
+.container .row{
+	margin-right: -13px;
+    margin-left: -13px;
+}
+		.our-team{
+		    padding: 10px 0 30px;
+		    background: #f7f5ec;
+		    text-align: center;
+		    overflow: hidden;
+		    position: relative;
+		}
+		.our-team .pic{
+		    display: inline-block;
+		    width: 120px;
+		    height: 120px;
+		    z-index: 1;
+		    position: relative;
+		    overflow: visible;
+		}
+		.our-team .picbefore{
+		    content: "";
+		    width: 100%;
+		    height: 100%;
+		    border-radius: 50%;
+		    background: #ee4266;
+		    position: absolute;
+		    bottom: 135%;
+		    right: 0;
+		    left: 0;
+		    opacity: 0.2;
+		    transform: scale(3);
+		    transition: all 0.3s linear 0s;
+		}
+		.our-team .pic:before{ height: 100%; }
+		.our-team .picafter{
+		    content: "";
+		    width: 100%;
+		    height: 100%;
+		    border-radius: 50%;
+		    background: #ee4266;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: -1;
+		}
+		.our-team .pic img{
+		    width: 100%;
+		    height: auto;
+		    border-radius: 50%;
+		    transform: scale(1);
+		    transition: all 0.9s ease 0s;
+		}
+		.our-team .pic img{
+		    box-shadow: 0 0 0 14px #f7f5ec;
+		    transform: scale(0.7);
+		}
+		.our-team .team-content{ margin-bottom: 10px; }
+		.our-team .title{
+		    font-size: 22px;
+		    font-weight: 700;
+		    color: #4e5052;
+		    letter-spacing: 1px;
+		    text-transform: capitalize;
+		    margin-bottom: 5px;
+		}
+		.our-team .post{
+		    display: block;
+		    font-size: 15px;
+		    color: #4e5052;
+		    text-transform:capitalize;
+		}
+		.our-team .social{
+		    width: 100%;
+		    padding: 0;
+		    margin: 0;
+		    background: #eb1768;
+		    position: absolute;
+		    bottom: -100px;
+		    left: 0;
+		    transition: all 0.5s ease 0s;
+		}
+		.our-team .social{ bottom: 0; }
+		.our-team .social a{
+		    display: block;
+		    padding: 5px 0px 2px;
+		    font-size: 25px;
+		    color: #fff;
+		    transition: all 0.3s ease 0s;
+		}
+		.our-team .social a:hover{
+		    color: #eb1768;
+		    background: #f7f5ec;
+		}
+/* 发布页样式开始 */
+.card-blog {
+    margin-top: 30px;
+}
+.public-info {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    color: rgba(0,0,0, 0.87);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.public-info .card-image {
+    height: 60%;
+    position: relative;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -30px;
+    border-radius: 6px;
+}
+.public-info .content {
+    padding: 0px 10px;
+}
+.public-info .card-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    pointer-events: none;
+    vertical-align: middle;
+    max-width: 55%;
+    margin: 0 auto;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.public-info .card-image video{
+	width:100%;
+}
+.public-info .card-image .card-title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #fff;
+    font-size: 1.3em;
+    text-shadow: 0 2px 5px rgba(33, 33, 33, 0.5);
+}
+.card-blog .card-title {
+    margin-top: 5px;
+}
+.description, .card-description, .footer-big p {
+    color: #999999;
+}
+.navInfo{
+	background: #E5E5E5;
+}
+/* 发布页样式结束 */
+/* 发布信息样式开始 */
+.release{
+	position: relative;
+}
+/*.release .upload{
+	width:100%;
+	height:50px;
+	background: #ddd3;
+	border-bottom: 1px solid #ddd;
+	position:fixed;
+	bottom: 0;
+}*/
+.release .title{
+	height: 50px;
+    background: #ddd3;
+    border-bottom: 1px solid #ddd;
+    line-height: 50px;
+    text-align: center;
+}
+.release .title span{
+	margin-left:54px;
+}
+.release .sendbtn{
+	float: right;
+    background: #fff;
+    border: 1px solid #ddd;
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 44px;
+    border-radius: 4px;
+}
+.release .content{
+	padding: 15px;
+	margin-top:0;
+}
+.release .content .edit{
+	font-size: 13px;
+}
+.release .content .edit textarea{
+	width:100%;
+}
+.release .upload{
+	margin-top: 40px;
+}
+.release .uploadimg{
+	width: 100px;
+    height: 100px;
+    border: 1px dashed #ddd;
+    position: relative;
+    display: inline-block;
+}
+.release .uploadimg span{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+.release .uploadimg .icon1{
+	top: 40px;
+    left: 50px;
+    border-left: 1px dashed #ddd;
+}
+.release .uploadimg .icon2{
+	top: 50px;
+    left: 40px;
+	border-top: 1px dashed #ddd;
+}
+.release .uploadimg input[type="file"]{
+	width:100px;
+	height:100px;
+	opacity: 0;
+}
+.imageview{
+	width:100px;
+	display: inline-block;
+}
+/* 发布信息样式结束 */
+/* 好友圈样式开始 */
+body{
+	background: #f2f2f2;
+	font-size:13px;
+}
+.circle-main .circle-list{
+	background: #fff;
+	margin-bottom: 20px;
+	padding:0px 15px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.circle-main header,.circle-main .m-text-cut{
+	padding: 0.75rem;
+}
+.circle-main .m-img-box{
+	width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+.circle-main .m-img-box img{
+	width: 100%;
+    height: 100%;
+    vertical-align: top;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.circle-main .m-text-cut h3{
+	font-size: .9375rem;
+    margin: 0;
+}
+.circle-main .m-text-cut{
+	display: inline-block;
+}
+.circle-main footer{
+	overflow: hidden;
+}
+.circle-main .m-box-center{
+	float: left;
+	width:50%;
+	text-align: center;
+	border-top:1px solid #ddd;
+	margin-top:15px;
+}
+.circle-main h5{
+	display: inline-block;
+}
+.circle-main .m-box-center span{
+	vertical-align: middle;
+}
+.circle-main .single-img{
+	max-width: 200px;
+}
+.circle-main .circle-text{
+	margin-bottom: 10px;
+}
+/* 好友圈样式结束 */

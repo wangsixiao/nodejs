@@ -1,0 +1,413 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+/****-----start-body----****/
+body{
+	 background: url(../images/bg.png);
+	font-family: 'Lato', sans-serif;
+}
+.wrap{
+	margin: 0 auto;
+	width: 80%;
+}
+body a,form li,input[type="submit"],input[type="text"],.sixth-login input[type="submit"],.third-login input[type="submit"]{
+	transition: 0.1s all;
+	-webkit-transition: 0.1s all;
+	-moz-transition: 0.1s all;
+	-o-transition: 0.1s all;
+}
+.login-form {
+  background: url(../images/welcome.jpg)no-repeat 0px 0px;
+  min-height: 750px;
+   width: 33.3333%;
+  margin-bottom: 0;
+    margin: 4% auto 0;
+}
+h1 {
+  text-align: center;
+    margin-top: 2em;
+  font-size: 3em;
+  color: #fff;
+}
+.head-info h2 {
+	font-family: 'Calligraffitti', cursive;
+  padding-top: 1em;
+  text-align: center;
+  font-weight: 100;
+  font-size: 6em;
+  color: #fff;
+}
+.head-info h3 {
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 1.5em 0 1.5em 0;
+  width: 88%;
+  margin: 0 auto;
+  font-weight: 100;
+}
+form {
+	padding: 0% 5% 0%;
+}
+.social-icons p {
+	color: #5ca3d9;
+	font-size: 1em;
+	font-weight: 400;
+}
+.social-icons {
+	padding: 0px 28px 0 28px;
+}
+a.account {
+	float: left;
+}
+a.trouble {
+	float: right;
+}
+a.social-account h3 {
+	text-align: center;
+	padding: 0em 0 1.5em 0;
+	color: #CECECE;
+}
+form{
+	list-style: none;
+	margin-bottom: 25px;
+	width: 90%;
+	background: none;
+}
+input[type="text"], input[type="password"] {
+	font-family: 'Lato', sans-serif;
+    width: 441px;
+  padding: 16px 16px 16px 16px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  background: none;
+  font-weight: 100;
+  border-radius: 50em;
+  -webkit-border-radius: 50em;
+  -moz-border-radius: 50em;
+  -o-border-radius: 50em;
+  -ms-border-radius: 50em;
+  border: 1px solid#fff;
+  margin-bottom: 1em;
+    text-align: center;
+}
+input[type="submit"]{
+ font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 12px 12px 12px;   
+  width: 475px;
+  background: #27ae61;
+  border-radius: 50em;
+  -webkit-border-radius: 50em;
+  -moz-border-radius: 50em;
+  -o-border-radius: 50em;
+  -ms-border-radius: 50em;
+  border: none;
+    text-align: center;
+}
+input[type="submit"]:hover {
+	background: #1abc9c;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	-ms-border-radius: 6px;
+	border-radius: 50em;
+	-webkit-border-radius: 50em;
+	-moz-border-radius: 50em;
+	-o-border-radius: 50em;
+	-ms-border-radius: 50em;
+}
+.but-bottom {
+	margin-bottom: 0.8em;
+}
+.password {
+  text-align: center;
+}
+.password a {
+  color: #fff;
+  word-spacing: 2em;
+  font-weight: 100;
+}
+input[type="file"] {
+  opacity: 0;
+  width: 95px;
+  height: 85px;
+  display: inline-block;
+  border: 0px;
+  outline: none;
+  position: absolute;
+  top: 0px;
+  left: 41%;
+  cursor: pointer;
+}
+
+/*--start-responsive-design--*/
+@media (max-width:1440px){
+	input[type="text"], input[type="password"] {
+		  width: 388px;
+	  }
+	  input[type="submit"] {
+	 	 width: 423px;
+	  }
+}
+@media (max-width:1366px){
+	input[type="text"], input[type="password"] {
+	  width: 365px;
+	}
+	input[type="submit"] {
+	  width: 399px;
+	}
+	.head-info h2 {
+  font-size: 4em;
+}
+.login-form {
+  min-height: 648px;
+}
+}
+@media (max-width:1280px){
+	input[type="text"], input[type="password"] {
+  width: 340px;
+}
+input[type="submit"] {
+  width: 374px;
+}
+}
+@media (max-width:1024px){
+	.login-form {
+  width: 41.3333%;
+}
+}
+@media (max-width:768px){
+	.login-form {
+		width: 56%;
+	}
+	.head-info h2 {
+	  width: 90%;
+	}
+}
+@media (max-width:667px){
+	input[type="text"], input[type="password"] {
+	  width: 292px;
+	}
+	input[type="submit"] {
+	  width: 325px;
+	}
+}
+@media (max-width:640px){
+	.login-form {
+	  width: 66%;
+	}
+}
+@media (max-width:568px){
+	h1 {
+	  text-align: center;
+	  margin-top: 1em;
+	  font-size: 1.6em;
+	  color: #fff;
+	}
+	input[type="text"], input[type="password"] {
+	  width: 285px;
+	}
+	input[type="submit"] {
+	  width: 317px;
+	}
+}
+@media (max-width:480px){
+		.login-form {
+  width: 90%;
+     min-height: 560px;
+}
+.head-info h3 {
+  width: 91%;
+}
+.head-info h1 {
+  height: 60px;
+    font-size: 3em;
+}
+}
+@media (max-width:375px){
+	input[type="text"], input[type="password"] {
+	  width: 248px;
+	}
+	input[type="submit"] {
+	  width: 280px;
+	}
+}
+@media (max-width:384px){
+	input[type="text"], input[type="password"] {
+	  width: 265px;
+	}
+	input[type="submit"] {
+	  width: 298px;
+	}
+}
+@media (max-width:320px){
+	input[type="text"], input[type="password"] {
+		width: 222px;
+		padding: 10px 10px 10px 10px;
+	}
+	input[type="submit"] {
+  width: 245px;
+  padding: 5px 10px 12px 10px;
+  font-size: 18px;
+}
+.head-info h3 {
+  width: 92%;
+  padding: 2em 0 1.2em 0;
+  font-size: 14px;
+}
+.login-form {
+  width: 90%;
+ min-height: 395px;
+}
+.head-info h2 {
+  height: 35px;
+  font-size: 2.1em;
+    padding-top: 18px;
+}
+h1 {
+  margin-top: 1em;
+  font-size: 1.3em;
+}
+}
+/*--end-responsive-design--*/
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v14/XNVd6tsqi9wmKNvnh5HNEBJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v14/2HG_tEPiQ4Z6795cGfdivFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(https://fonts.gstatic.com/s/lato/v14/eFRpvGLEW31oiexbYNx7Y_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(https://fonts.gstatic.com/s/lato/v14/GtRkRNTnri0g82CjKnEB0Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v14/dPJ5r9gl3kK6ijoeP1IRsvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v14/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v14/R4a6fty3waPci7C44H8AjvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v14/tI4j516nok_GrVf4dhunkg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Calligraffitti';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Calligraffitti Regular'), local('Calligraffitti-Regular'), url(https://fonts.gstatic.com/s/calligraffitti/v9/vLVN2Y-z65rVu1R7lWdvyKMATE9hNx1o-nwq2GP8bHQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+.error{
+  color: red;
+  text-align: center;
+}

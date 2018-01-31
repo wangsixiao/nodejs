@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Music</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> 
+		addEventListener("load", function() { 
+			setTimeout(hideURLbar, 0); }, false); 
+		function hideURLbar(){ window.scrollTo(0,1); } 
+		</script>
+		<link href="/style/index.css" rel="stylesheet" type="text/css">
+	</head>
+<body>
+ <!--SIGN IN-->
+ <h1>Music sharing</h1>
+<div class="login-form">
+	<div class="head-info">
+		<h2>SIGN IN</h2>
+		<h3>Music</h3>
+	</div>
+	<form action="/register" method="post">
+		<input type="text" class="username" name="username" value="Name and Surname" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Name and username&#39;;}">
+		<input type="password" class="password" name="password" value="Password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}">
+		<input type="submit" value="Register" id="register">
+	</form>
+	<div class="password">
+		<a href="./login">Password   |   login</a>
+	</div>
+	<div class="error"><%= errMsg %></div>
+</div>
+</body>
+</html>

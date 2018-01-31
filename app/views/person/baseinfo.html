@@ -1,0 +1,49 @@
+
+<div class="card" style="margin-top: .5625rem;">
+    <div class="m-box" style="border: none;">
+        <div class="box-left">照片墙</div> 
+        <div class="box-main m-box-col">
+            <img src="/images/header-bg.jpg" alt="img" />
+            <input type="file" id="bgpic">
+        </div>
+    </div>
+</div>
+<div class="card" style="margin-top: .5625rem;">
+    <div class="m-box">
+        <div class="box-left">头像</div> 
+        <div class="box-main m-box-col">
+            <img src="/person_files/3s.jpg" alt="img" />
+            <input type="file" id="headpic">
+        </div>
+    </div>
+    <div class="m-box">
+        <div class="box-left">昵称</div> 
+        <div class="box-main m-box-col" id="nickname"><%= personInfoList.name %></div>
+    </div>
+    <div class="m-box">
+        <div class="box-left">性别</div> 
+        <div class="box-main m-box-col" id="sex" id="sex"><%= personInfoList.sex %></div>
+    </div>
+    <div class="m-box">
+        <div class="box-left">所在地</div> 
+        <div class="box-main m-box-col" id="area"><%= personInfoList.area %></div>
+    </div>
+    <div class="m-box" style="border: none;">
+        <div class="box-left">签名</div> 
+        <div class="box-main m-box-col" id="intro"><%= personInfoList.intro %></div>
+    </div>
+</div>
+<div class="card" style="margin-top: .5625rem;">
+    <div class="m-box">
+        <div class="box-left">生日</div> 
+        <div class="box-main m-box-col" id="birthday"><%= personInfoList.birthday %></div>
+    </div>
+    <div class="m-box">
+        <div class="box-left">QQ</div> 
+        <div class="box-main m-box-col" id="qqnumber"><%= personInfoList.qqnumber %></div>
+    </div>
+    <div class="m-box">
+        <div class="box-left">微信</div> 
+        <div class="box-main m-box-col" id="weixin"><%= personInfoList.weixin %></div>
+    </div>
+</div>

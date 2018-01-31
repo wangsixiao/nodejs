@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<% include ../head.html %>
+<body>
+<% include ../titleNav.html %>
+  <!-- 头部开始 -->
+<div class="profile-cover" style='background-image: url("./images/header-bg.jpg")'>
+    <div class="overlay-head"></div>
+    <div class="mod-fil-img m-avatar-box">
+        <span class="m-img-box"><img src="https://tvax2.sinaimg.cn/crop.0.0.996.996.180/006mnWYmly8fhf9ayw2j4j30ro0roaeb.jpg"></span>
+    </div>
+    <div class="item-list" style="position: relative;">
+        <div class="mod-fil-name m-txt-cut">
+            <span class="mod-fil-n">
+                <span class="txt-shadow" id="titlename"><%= personInfoList.name %></span> 
+                <!-- <i class="m-icon m-icon-female"></i> -->
+            </span>
+        </div> 
+        <div class="mod-fil-fans">
+            <div class="txt-shadow">关注<span>85</span></div> 
+            <div class="txt-shadow">粉丝<span>43</span></div>
+        </div> 
+        <p class="mod-fil-desc m-text-cut"><%= personInfoList.intro %></p>
+    </div>
+</div>
+<!-- 头部结束 -->
+<nav class="m-top-nav">
+    <ul class="nav-item">
+        <li class="m-cur" id="baseinfo">
+            <span>个人资料</span>
+        </li>
+        <li id="publish">
+            <span>我的发布</span>
+        </li>
+    </ul>
+</nav>
+<ul class="navInfo">
+    <li><% include ./baseinfo.html %></li>
+    <li style="display: none;padding-top: 15px"><% include ./publish.html %></li>
+</ul>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.uiAlertView.js"></script>
+<script type="text/javascript" src="/js/style.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".box-main input[type='file']").height($(".box-main img").height())
+        $(".nav-item li").click(function(){
+            $(".navInfo li").hide()
+            $(".nav-item li").removeClass("m-cur")
+            $(this).addClass("m-cur")
+            var index = $(this).index()
+            $(".navInfo li").eq(index).show()
+            // var navinfo = {
+            //     id: $(this).attr("id")
+            // }
+            // $.ajax({
+            //     data:{id:$(this).attr("id")},
+            //     url:'/person',
+            //     type:'post'
+            // })
+        })
+    })
+</script>
+</html>
