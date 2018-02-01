@@ -2,25 +2,17 @@
 <% for(var i = 0;i<publishList.length;i++){ %>
   <div class="public-info card-blog">
     <div class="card-image">
-      <img class="img" src=<%= publishList[i].address %> alt="">
+    <% if(publishList[i].address.split(".")[1] == "mp4"){ %>
+        <video src=<%= publishList[i].address %> controls="controls">
+        your browser does not support the video tag
+        </video>
+    <%}else{var imglist = publishList[i].address.split(";")%>
+      <img class="img" src=<%= imglist[0] %> alt="">
+    <% } %>
     </div>
     <div class="content">
       <p class="card-description"><%= publishList[i].content %></p>
     </div>
   </div>
 <%}%>
-
-  <div class="public-info card-blog">
-    <div class="card-image">
-        <video src="/images/jq22-sp.mp4" controls="controls">
-        your browser does not support the video tag
-        </video>
-    </div>
-    <div class="content">
-      <!-- <h6 class="category text-info">Fashion</h6> -->
-      <p class="card-description">
-        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-      </p>
-    </div>
-  </div>
 </div>

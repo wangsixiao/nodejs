@@ -4,7 +4,7 @@
 <body>
 <% include ../titleNav.html %>
 <div class="circle-main">
-<% for(var i = 0;i<publishList.length;i++){ %>
+<% publishList.map(function(value,i){ %>
 	<div class="circle-list">
 		<header>
 			<a class="m-img-box"><img src="https://tvax2.sinaimg.cn/crop.0.0.996.996.180/006mnWYmly8fhf9ayw2j4j30ro0roaeb.jpg"></a>
@@ -18,9 +18,13 @@
 				<video controls="controls" src=<%= publishList[i].address %>>
 				your browser does not support the video tag
 				</video>
-			<% }else{ %>
-				<img class="single-img" src=<%= publishList[i].address %> >
-			<% } %>
+			<% 
+				}else{ 
+				var imglist = publishList[i].address.split(";")
+				for(var j = 0;j < imglist.length;j++){
+			%>
+				<img class="single-img" src=<%= imglist[j] %> >
+			<% }} %>
 		</article>
 		<footer>
 			<div class="m-box-center">
@@ -33,7 +37,7 @@
 			</div>
 		</footer>
 	</div>
-<%}%>
+<%})%>
 </div>
 </body>
 <script type="text/javascript" src="/js/jquery.js"></script>

@@ -266,6 +266,9 @@ body{
 	padding:0px 15px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
+.circle-main .circle-list article{
+	overflow: hidden;
+}
 .circle-main header,.circle-main .m-text-cut{
 	padding: 0.75rem;
 }
@@ -305,12 +308,22 @@ body{
 	display: inline-block;
 }
 .circle-main .m-box-center span{
-	vertical-align: middle;
+	/*vertical-align: middle;*/
 }
 .circle-main .single-img{
 	max-width: 200px;
+	width: 48%;
+    float: left;
+    margin-bottom: 5px;
 }
 .circle-main .circle-text{
 	margin-bottom: 10px;
 }
 /* 好友圈样式结束 */
+/* 登录注册样式开始 */
+.login-form .ui-tooltip{
+	border:1px solid red;
+	top: 350px;
+    left: 100px;
+}
+/* 登录注册样式结束 */

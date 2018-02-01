@@ -1,6 +1,23 @@
 $(function(){
+	// 登录
+	$(".login-form").height($(window).height())
+	$(".head-info").css("padding-top",($(window).height()-480)/2)
+	$("#login,#register").click(function(){
+		$("#signForm").validate({
+			rules:{
+				username: {
+			        required: true
+			    },
+			    password: {
+			        required: true,
+			        minlength: 6
+			    },
+			}
+		})
+	})
 	// 发布信息
 	$(".circle-list video").css("max-width",$(window).width() - 30)
+	$(".circle-main .single-img").css("margin-right","2%")
 	// 基本信息上传
 	$("#nickname").click(function(){
 		var json = {

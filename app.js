@@ -39,7 +39,7 @@ app.use(multer({ dest: 'upload-file'}).any())
 // var userLogin = require('./models/userLogin.js')
 
 // 编写路由
-require('./public/routes')(app,fs)
+require('./public/routes')(app,router,fs)
 
 var server = app.listen(8081, function () {
  

@@ -42,14 +42,7 @@ body a,form li,input[type="submit"],input[type="text"],.sixth-login input[type="
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
 }
-.login-form {
-  background: url(../images/welcome.jpg)no-repeat 0px 0px;
-  min-height: 750px;
-   width: 33.3333%;
-  margin-bottom: 0;
-    margin: 4% auto 0;
-}
-h1 {
+.login-form h1{
   text-align: center;
     margin-top: 2em;
   font-size: 3em;
@@ -60,7 +53,7 @@ h1 {
   padding-top: 1em;
   text-align: center;
   font-weight: 100;
-  font-size: 6em;
+  font-size: 4em;
   color: #fff;
 }
 .head-info h3 {
@@ -71,9 +64,6 @@ h1 {
   width: 88%;
   margin: 0 auto;
   font-weight: 100;
-}
-form {
-	padding: 0% 5% 0%;
 }
 .social-icons p {
 	color: #5ca3d9;
@@ -94,15 +84,9 @@ a.social-account h3 {
 	padding: 0em 0 1.5em 0;
 	color: #CECECE;
 }
-form{
-	list-style: none;
-	margin-bottom: 25px;
-	width: 90%;
-	background: none;
-}
 input[type="text"], input[type="password"] {
 	font-family: 'Lato', sans-serif;
-    width: 441px;
+  width: 441px;
   padding: 16px 16px 16px 16px;
   color: #fff;
   font-size: 18px;
@@ -136,22 +120,6 @@ input[type="submit"]{
   border: none;
     text-align: center;
 }
-input[type="submit"]:hover {
-	background: #1abc9c;
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	-o-border-radius: 6px;
-	-ms-border-radius: 6px;
-	border-radius: 50em;
-	-webkit-border-radius: 50em;
-	-moz-border-radius: 50em;
-	-o-border-radius: 50em;
-	-ms-border-radius: 50em;
-}
-.but-bottom {
-	margin-bottom: 0.8em;
-}
 .password {
   text-align: center;
 }
@@ -160,95 +128,7 @@ input[type="submit"]:hover {
   word-spacing: 2em;
   font-weight: 100;
 }
-input[type="file"] {
-  opacity: 0;
-  width: 95px;
-  height: 85px;
-  display: inline-block;
-  border: 0px;
-  outline: none;
-  position: absolute;
-  top: 0px;
-  left: 41%;
-  cursor: pointer;
-}
-
 /*--start-responsive-design--*/
-@media (max-width:1440px){
-	input[type="text"], input[type="password"] {
-		  width: 388px;
-	  }
-	  input[type="submit"] {
-	 	 width: 423px;
-	  }
-}
-@media (max-width:1366px){
-	input[type="text"], input[type="password"] {
-	  width: 365px;
-	}
-	input[type="submit"] {
-	  width: 399px;
-	}
-	.head-info h2 {
-  font-size: 4em;
-}
-.login-form {
-  min-height: 648px;
-}
-}
-@media (max-width:1280px){
-	input[type="text"], input[type="password"] {
-  width: 340px;
-}
-input[type="submit"] {
-  width: 374px;
-}
-}
-@media (max-width:1024px){
-	.login-form {
-  width: 41.3333%;
-}
-}
-@media (max-width:768px){
-	.login-form {
-		width: 56%;
-	}
-	.head-info h2 {
-	  width: 90%;
-	}
-}
-@media (max-width:667px){
-	input[type="text"], input[type="password"] {
-	  width: 292px;
-	}
-	input[type="submit"] {
-	  width: 325px;
-	}
-}
-@media (max-width:640px){
-	.login-form {
-	  width: 66%;
-	}
-}
-@media (max-width:568px){
-	h1 {
-	  text-align: center;
-	  margin-top: 1em;
-	  font-size: 1.6em;
-	  color: #fff;
-	}
-	input[type="text"], input[type="password"] {
-	  width: 285px;
-	}
-	input[type="submit"] {
-	  width: 317px;
-	}
-}
-@media (max-width:480px){
-		.login-form {
-  width: 90%;
-     min-height: 560px;
-}
 .head-info h3 {
   width: 91%;
 }
@@ -257,40 +137,10 @@ input[type="submit"] {
     font-size: 3em;
 }
 }
-@media (max-width:375px){
-	input[type="text"], input[type="password"] {
-	  width: 248px;
-	}
-	input[type="submit"] {
-	  width: 280px;
-	}
-}
-@media (max-width:384px){
-	input[type="text"], input[type="password"] {
-	  width: 265px;
-	}
-	input[type="submit"] {
-	  width: 298px;
-	}
-}
-@media (max-width:320px){
-	input[type="text"], input[type="password"] {
-		width: 222px;
-		padding: 10px 10px 10px 10px;
-	}
-	input[type="submit"] {
-  width: 245px;
-  padding: 5px 10px 12px 10px;
-  font-size: 18px;
-}
 .head-info h3 {
   width: 92%;
   padding: 2em 0 1.2em 0;
   font-size: 14px;
-}
-.login-form {
-  width: 90%;
- min-height: 395px;
 }
 .head-info h2 {
   height: 35px;
@@ -411,3 +261,24 @@ h1 {
   color: red;
   text-align: center;
 }
+/*新添加样式开始*/
+.login-form{
+  width:100%;
+  background: url(../images/welcome.jpg)no-repeat 0px 0px;
+}
+.login-form input[type="text"],.login-form input[type="password"]{
+  width:65%;
+}
+.login-form form{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.login-form form label{
+  color:#fff;
+  font-size: 18px;
+}
+.login-form input[type="submit"]{
+  width: 72%;
+  margin-left: 45px;
+}
+/*新添加样式结束*/
