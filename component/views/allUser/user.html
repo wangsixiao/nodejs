@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<% include ../head.html %>
+<style type="text/css">
+    li{
+        list-style: none;
+    }
+</style>
+<body>
+<% include ../titleNav.html %>
+<div class="demo">
+    <div class="container">
+        <ul class="row user-list">
+        <% allUserList.map(function(val,index){ %>
+            <li class="col-md-3 col-sm-6 col-xs-6">
+                <div class="our-team">
+                    <a href="/alluser/singleEnter?username=<%= allUserList[index].username %>">
+                        <div class="pic">
+                            <div class="picbefore"></div>
+                            <img src="/images/1.jpg">
+                            <div class="picafter"></div>
+                        </div>
+                        <div class="team-content">
+                                <% if(allUserList[index].name !== ''){ %>
+                                <h3 class="title"><%= allUserList[index].name %></h3>
+                                <%}else{%>
+                                <h3 class="title"><%= allUserList[index].username %></h3>
+                                <%}%>
+                            <%if(allUserList[index].intro !== ''){%>
+                            <span class="post"><%= allUserList[index].intro %></span>
+                            <%}else{%>
+                            <span class="post">个性签名</span>
+                            <%}%>
+                        </div>
+                    </a>
+                    <div class="social">
+                    <% if(friendList.length > 0){ var flag = false; %>
+                    <% for(var i = 0;i<friendList.length;i++){ %>
+                    <% if(allUserList[index].username == friendList[i].friendname){ flag = true; }}%>
+                    <% if(flag){ %>
+                        <p>已成为好友</p>
+                    <% }else{ %>
+                        <a class="fa">+</a>
+                        <span style="display: none;"><%= allUserList[index].username%></span>
+                    <% }}else{ %>
+                        <a class="fa">+</a>
+                        <span style="display: none;"><%= allUserList[index].username%></span>
+                    <%} %>
+                    
+                    </div>
+                </div>
+            </li>
+        <% }) %>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".social").one("click",function(){
+            var self = this
+            $.ajax({
+                data:{
+                    friendname: $(this).find("span").text()
+                },
+                url:"/alluser?param=friend",
+                type: "get",
+                success:function(data){
+                    $(self).find("a").hide()
+                    $("<p>已成为好友</p>").appendTo($(self))
+                }
+            })
+        })
+        for(var i = 0;i < $(".user-list li").length;i++){
+            switch(i%4){
+                case 0:
+                    $(".user-list li").eq(i).find(".picafter,.picbefore").css("background","#1abc9c")
+                    break;
+                case 1:
+                    $(".user-list li").eq(i).find(".picafter,.picbefore").css("background","#eb1768")
+                    break;
+                case 2:
+                    $(".user-list li").eq(i).find(".picafter,.picbefore").css("background","#7a22bb")
+                    break;
+                case 3:
+                    $(".user-list li").eq(i).find(".picafter,.picbefore").css("background","#b6c30b")
+                    break;
+            }
+        }
+    })
+</script>
+</html>

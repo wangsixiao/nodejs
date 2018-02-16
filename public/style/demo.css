@@ -35,11 +35,12 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 		    text-align: center;
 		    overflow: hidden;
 		    position: relative;
+		    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 		}
 		.our-team .pic{
 		    display: inline-block;
-		    width: 120px;
-		    height: 120px;
+		    width: 100px;
+		    height: 100px;
 		    z-index: 1;
 		    position: relative;
 		    overflow: visible;
@@ -83,24 +84,26 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 		}
 		.our-team .team-content{ margin-bottom: 10px; }
 		.our-team .title{
-		    font-size: 22px;
+		    font-size: 20px;
 		    font-weight: 700;
 		    color: #4e5052;
 		    letter-spacing: 1px;
 		    text-transform: capitalize;
-		    margin-bottom: 5px;
+		    margin: 5px 0px;
 		}
 		.our-team .post{
 		    display: block;
 		    font-size: 15px;
 		    color: #4e5052;
 		    text-transform:capitalize;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
 		}
 		.our-team .social{
 		    width: 100%;
 		    padding: 0;
 		    margin: 0;
-		    background: #eb1768;
 		    position: absolute;
 		    bottom: -100px;
 		    left: 0;
@@ -111,7 +114,6 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 		    display: block;
 		    padding: 5px 0px 2px;
 		    font-size: 25px;
-		    color: #fff;
 		    transition: all 0.3s ease 0s;
 		}
 		.our-team .social a:hover{
@@ -172,7 +174,7 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
     color: #999999;
 }
 .navInfo{
-	background: #E5E5E5;
+	/*background: #E5E5E5;*/
 }
 /* 发布页样式结束 */
 /* 发布信息样式开始 */
@@ -326,4 +328,48 @@ body{
 	top: 350px;
     left: 100px;
 }
+a{
+	color:#000;
+}
 /* 登录注册样式结束 */
+/* 评论样式开始 */
+.ct-user-name{
+	color: #ff8200;
+    margin-top: 5px;
+}
+.compose textarea{
+	width:100%;
+	border:none;
+}
+.compose .edit{
+	background: #fff;
+}
+.compose form{
+	padding:15px;
+}
+.comment .circle-main footer a{
+	color:#000;
+}
+.comment .circle-main .m-box-center{
+	border-top: none;
+	border-bottom: 1px solid #ddd;
+	margin-top: 0px;
+}
+.comment .circle-main .circle-list{
+	box-shadow: none;
+}
+.listview{
+	background:#fff;
+}
+.listview li{
+	border-bottom: 1px solid #e6e6e6;
+	padding:10px 0px 0px 10px;
+}
+.listview .m-text-cut{
+	overflow: visible;
+	padding-bottom: 0px;
+}
+.listview .m-text-cut p{
+	height: 30px;
+}
+/* 评论样式结束 */

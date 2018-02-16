@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>写评论</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/style/demo.css">
+</head>
+<body>
+<div class="compose release">
+	<div class="title">
+		<span>评论分享</span>
+		<button class="sendbtn">发送</button>
+	</div>
+	<div class="edit">
+		<form>
+			<textarea class="text-area" name="content" placeholder="写评论..."></textarea>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/style.js"></script>
+<script type="text/javascript">
+	$(function(){
+		function GetQueryString(name) {
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if(r!=null)return  unescape(r[2]); return null;
+		}
+		var account_id = GetQueryString("account_id")
+		$(".edit").height($(window).height()-50)
+		$(".sendbtn").click(function(){
+			$.ajax({
+				data:{
+					comment: $(".edit textarea").val(),
+					account_id: account_id
+				},
+				url: "/circle/compose",
+				type:'post',
+				success:function(data){
+					window.location.replace('/circle?account_id='+account_id);
+				}
+			})
+		})
+	})
+</script>
+</body>
+</html>

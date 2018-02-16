@@ -281,4 +281,7 @@ h1 {
   width: 72%;
   margin-left: 45px;
 }
+input::-webkit-input-placeholder{
+  color:#fff;
+}
 /*新添加样式结束*/

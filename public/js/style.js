@@ -1,4 +1,11 @@
 $(function(){
+	// textarea 高度自适应
+    	$('.text-area').each(function () {
+		  	this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+		}).on('input', function () {
+			  this.style.height = 'auto';
+			  this.style.height = (this.scrollHeight) + 'px';
+		})
 	// 登录
 	$(".login-form").height($(window).height())
 	$(".head-info").css("padding-top",($(window).height()-480)/2)

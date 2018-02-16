@@ -26,7 +26,7 @@ app.set('view engine', 'html')
 
 // 加载静态资源
 app.use(express.static(__dirname + '/public'))
-app.set('views', __dirname + '/app/views')
+app.set('views', __dirname + '/component/views')
 
 
 var path = require('path')

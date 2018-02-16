@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<% include ../head.html %>
+<style type="text/css">
+    li{
+        list-style: none;
+    }
+</style>
+<body>
+<% include ../titleNav.html %>
+</body>
+<div class="circle-main">
+    <ul class="listview">
+    <% friendList.map(function(val,index){ %>
+        <li>
+            <a href="/person?accountname=<%=friendList[index].friendname%>">
+                <div class="m-img-box">
+                <%if(friendList[index].address !== null){%>
+                    <img src="<%=friendList[index].address%>">
+                <%}else{%>
+                    <img src="/images/1.jpg"/>
+                <%}%>
+                </div>
+                <div class="m-text-cut">
+                    <h3><%=friendList[index].friendname%></h3>
+                    <%if(friendList[index].content !== null){%>
+                        <p><%=friendList[index].content%></p>
+                    <%}else{%>
+                        <p>个性签名</p>
+                    <%}%>
+                </div>
+            </a>
+        </li>
+    <%})%>
+    </ul>
+</div>
+<script type="text/javascript" src="/js/jquery.js"></script>
+</html>

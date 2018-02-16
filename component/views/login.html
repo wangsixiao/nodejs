@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Music</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/style/index.css" rel="stylesheet" type="text/css">
+		<script src="/js/vue.min.js"></script>
+	</head>
+<body>
+<div class="login-form">
+	<div class="head-info">
+		<h2>Welcome</h2>
+		<h3>Music</h3>
+	</div>
+	<form action="/login" method="post" id="signForm">
+		<p>
+			<label>账 号 : </label>
+			<input type="text" name="username" id="username" value=""  placeholder="username">
+		</p>
+		<p>
+			<label>密 码 : </label>
+			<input type="password" name="password" id="password" value="" placeholder="Password">
+		</p>
+		<input type="submit" value="Login" id="login">
+	</form>
+	<div class="password">
+		<a href="./register">Password   |   Register</a>
+	</div>
+	<div class="error"><%= errMsg %></div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="./js/jquery.validate.js"></script>
+<script type="text/javascript" src="/js/style.js"></script>
+</html>

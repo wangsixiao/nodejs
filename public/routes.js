@@ -1,7 +1,9 @@
-var Index = require('../app/controllers/index')
-var User = require('../app/models/mysql.js')
-var Base = require('../app/models/baseinfo.js')
-var Publich = require('../app/models/upload.js')
+var Index = require('../component/controllers/index')
+var User = require('../component/models/mysql.js')
+var Base = require('../component/models/baseinfo.js')
+var Publish = require('../component/models/upload.js')
+var Comment = require('../component/models/comment.js')
+var Friend = require('../component/models/friend.js')
 // 文件上传
 var fs = require("fs")
 
@@ -36,20 +38,32 @@ module.exports = function(app,router){
     // 用户信息
     app.route("/person")
       .get(function(req,res){
+        var accountname
+        var flag
         var account = req.session.user
         if(account){
+          if(req.url == "/person"){
+            // 个人中心
+            accountname = account.username
+            flag = true
+          }else{
+            // 从好友列表里进入到个人中心里
+            accountname = req.query.accountname
+            flag = false
+          }
           var baseinfo = new Base({
-            username: account.username
+            username: accountname
           })
           baseinfo.userSelect(function(err,result){
             var personinfo = result[0]
-            var publish = new Publich({
-              account: account.username
+            var publish = new Publish({
+              account: accountname
             })
             publish.uploadUserSelect(function(err,result){
               res.render('person/person.html',{
                 personInfoList: personinfo,
-                publishList: result
+                publishList: result,
+                flag: flag
               })
             })
           })
@@ -90,10 +104,53 @@ module.exports = function(app,router){
 
     // 热门视听
     app.get('/allUser',function(req,res){
-      res.render("allUser/user.html",{
-        name:'',
-        sex:''
-      })
+      var account = req.session.user
+      if(account){
+        if(req.url == "/allUser"){
+          var base = new Base({})
+          base.userAllSelect(function(err,result){
+            var allUser = result
+            var friend = new Friend({
+              accountname: req.session.user.username
+            })
+            friend.friendSelect(function(err,result){
+              res.render("allUser/user.html",{
+                allUserList: allUser,
+                friendList: result
+              })
+            })
+          })
+        }else{
+          // 添加朋友
+          var friend = new Friend({
+            friendname: req.query.friendname,
+            accountname: req.session.user.username
+          })
+          friend.friendInsert(function(err,result){
+            res.send("添加成功")
+          })
+        }
+      }else{
+        res.render("login.html",{
+          errMsg:"请重新登录"
+        })
+      }
+    })
+    app.get("/allUser/singleEnter",function(req,res){
+      if(req.session.user){
+        var publish = new Publish({
+          account: req.query.username
+        })
+        publish.uploadUserSelect(function(err,result){
+          res.render('release/circle.html',{
+            publishList: result
+          })
+        })
+      }else{
+        res.render("login.html",{
+          errMsg:"请重新登录"
+        })
+      }
     })
     // 发布信息
     app.get("/release",function(req,res){
@@ -102,7 +159,7 @@ module.exports = function(app,router){
     app.route("/file_upload")
       .get(function(req,res){
         var account = req.session.user
-        var publish = new Publich({})
+        var publish = new Publish({})
         if(account){
           publish.uploadSelect(function(err,result){
             res.render("release/circle.html",{
@@ -142,16 +199,13 @@ module.exports = function(app,router){
             })
           }
           // 将上传的文件路径存储到数据库中
-          var publish = new Publich({
+          var publish = new Publish({
             address: address,
             content: publishContent,
-            account: account.username
+            account: account.username,
+            amount: 0
           })
           publish.uploadInsert(function(err,result){
-            if(err){
-              res.render('release/circle.html',{errMsg:err})
-              return
-            }
             publish.uploadSelect(function(err,result){
               res.render("release/circle.html",{
                 publishList: result
@@ -173,11 +227,70 @@ module.exports = function(app,router){
     // 好友圈
     app.get("/circle",function(req,res){
       var account = req.session.user
-      var publish = new Publich({})
+      var publish
       if(account){
-        publish.uploadSelect(function(err,result){
-          res.render("release/circle.html",{
-            publishList: result
+        if(req.url == '/circle'){
+          publish = new Publish({})
+          publish.uploadSelect(function(err,result){
+            res.render("release/circle.html",{
+              publishList: result
+            })
+          })
+        }else if(req.query.account_id){
+          // 进入评论里
+          publish = new Publish({
+            id: req.query.account_id
+          })
+          // 获取进入分享的信息
+          publish.singleBaseSelect(function(err,result){
+            var singleBase = result
+            publish.singleSelect(function(err,result){
+              res.render("release/comment.html",{
+                publishList: result,
+                baseinfo: singleBase[0]
+              })
+            })
+          })
+        }else{
+          // 点赞
+          publish = new Publish({
+            id: req.query.id,
+            amount: req.query.amount
+          })
+          publish.uploadUpdate(function(err,result){
+            res.send(result)
+          })
+        }
+      }else{
+        res.render("login.html",{
+          errMsg:"请重新登录"
+        })
+      }
+    })
+    // 评论
+    app.post("/circle/compose",function(req,res){
+      var account = req.session.user
+      var comment = new Comment({
+        comment:req.body.comment,
+        commentname:req.session.user.username,
+        accountid: req.body.account_id
+      })
+      comment.commentInsert(function(err,result){
+        res.send("success")
+      })
+    })
+    app.get("/circle/compose",function(req,res){
+      res.render("release/compose.html")
+    })
+    // 好友列表
+    app.get("/friend",function(req,res){
+      if(req.session.user){
+        var friend = new Friend({
+          accountname: req.session.user.username
+        })
+        friend.friendBaseSelect(function(err,result){
+          res.render("friend/friend.html",{
+            friendList: result
           })
         })
       }else{
@@ -186,7 +299,5 @@ module.exports = function(app,router){
         })
       }
     })
-
-
 
 }

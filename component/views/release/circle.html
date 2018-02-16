@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<% include ../head.html %>
+<body>
+<% include ../titleNav.html %>
+<div class="circle-main">
+<% publishList.map(function(value,i){ %>
+	<div class="circle-list">
+		<header>
+			<a class="m-img-box"><img src="https://tvax2.sinaimg.cn/crop.0.0.996.996.180/006mnWYmly8fhf9ayw2j4j30ro0roaeb.jpg"></a>
+			<div class="m-text-cut">
+				<h3><%= publishList[i].account%></h3>
+			</div>
+		</header>
+		<article>
+			<div class="circle-text"><%= publishList[i].content%></div>
+			<% if(publishList[i].address.split(".")[1] == "mp4"){ %>
+				<video controls="controls" src=<%= publishList[i].address %>>
+				your browser does not support the video tag
+				</video>
+			<% 
+				}else{ 
+				var imglist = publishList[i].address.split(";")
+				for(var j = 0;j < imglist.length;j++){
+			%>
+				<img class="single-img" src=<%= imglist[j] %> >
+			<% }} %>
+		</article>
+		<footer>
+			<a href="/circle?account_id=<%= publishList[i].id%>" class="m-box-center compose">
+				<span class="glyphicon glyphicon-comment"></span>
+				<h5>评论</h5>
+				<span><%= publishList[i].comment%></span>
+			</a> 
+			<div class="m-box-center like">
+				<span class="glyphicon glyphicon-heart-empty"></span>
+				<h5>喜欢</h5>
+				<span class="amount"><%= publishList[i].amount%></span>
+				<div class="list_id" style="display: none;"><%= publishList[i].id%></div>
+			</div>
+		</footer>
+	</div>
+<%})%>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/style.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".like").one("click", function(){
+			var like_amount = $(this).find(".amount").text()
+			if(like_amount == ''){
+				like_amount = 1
+			}else{
+				like_amount++
+			}
+			$(this).find(".amount").text(like_amount)
+			$(this).find(".glyphicon-heart-empty").css("color","red")
+			var list_id = $(this).find(".list_id").text()
+			$.ajax({
+                data:{
+                	id: list_id,
+                	amount: like_amount
+                },
+                url:'/circle?param=like_amount',
+                type:'get',
+                success:function(data){}
+            })
+		})
+	})
+</script>
+</html>
